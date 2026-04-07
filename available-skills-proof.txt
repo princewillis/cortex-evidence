@@ -1,0 +1,4 @@
+C:\Users\mirac\OneDrive\Desktop\cortex> rg -n "available_skills\\(" src\\cortex-engine\\src
+src\cortex-engine\src\session\prompt.rs:443:pub fn available_skills() -> &'static [&'static str] {
+src\cortex-engine\src\session\prompt.rs:582:    fn test_available_skills() {
+src\cortex-engine\src\session\prompt.rs:583:        let skills = available_skills();

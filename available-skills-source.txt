@@ -1,0 +1,20 @@
+src\\cortex-engine\\src\\session\\prompt.rs
+
+/// Get the list of all available built-in skills.
+///
+/// # Returns
+///
+/// A slice of all available skill names.
+#[allow(dead_code)]
+pub fn available_skills() -> &'static [&'static str] {
+    cortex_prompt_harness::prompts::AVAILABLE_SKILLS
+}
+
+/// Check if a skill name is valid.
+///
+/// # Arguments
+///
+/// * `skill` - The skill name to check
+///
+/// # Returns
+///
