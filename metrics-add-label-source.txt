@@ -1,0 +1,18 @@
+src\\cortex-engine\\src\\metrics.rs
+
+
+    /// Create with default config.
+    pub fn default_collector() -> Self {
+        Self::new(MetricsConfig::default())
+    }
+
+    /// Add a global label.
+    pub async fn add_label(&self, key: impl Into<String>, value: impl Into<String>) {
+        self.labels.write().await.insert(key.into(), value.into());
+    }
+
+    // Counter operations
+
+    /// Increment a counter.
+    pub async fn increment(&self, name: &str) {
+        self.increment_by(name, 1).await;

@@ -1,0 +1,2 @@
+C:\Users\mirac\OneDrive\Desktop\cortex> rg -n "add_label\\(" src
+src\cortex-engine\src\metrics.rs:92:    pub async fn add_label(&self, key: impl Into<String>, value: impl Into<String>) {
