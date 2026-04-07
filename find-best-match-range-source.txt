@@ -1,0 +1,30 @@
+src\\cortex-engine\\src\\tools\\handlers\\edit_strategies\\helpers.rs
+
+
+    same_chars as f64 / total_chars as f64
+}
+
+/// Finds the best matching range in content for the search string.
+#[allow(dead_code)]
+pub fn find_best_match_range(
+    content: &str,
+    search: &str,
+    _search_start: usize,
+    _search_end: usize,
+) -> Option<Range<usize>> {
+    // Simple approach: find normalized match and return range
+    let search_normalized = normalize_whitespace(search);
+
+    let mut best_match: Option<(usize, usize, f64)> = None;
+
+    // Slide a window through content
+    let content_lines: Vec<&str> = content.lines().collect();
+    let search_lines: Vec<&str> = search.lines().collect();
+
+    if search_lines.is_empty() {
+        return None;
+    }
+
+    for start_idx in 0..=content_lines.len().saturating_sub(search_lines.len()) {
+        let window = content_lines[start_idx..start_idx + search_lines.len()].join("\n");
+        let window_normalized = normalize_whitespace(&window);

@@ -1,0 +1,2 @@
+C:\Users\mirac\OneDrive\Desktop\cortex> rg -n "find_best_match_range\\(" src\\cortex-engine\\src
+src\cortex-engine\src\tools\handlers\edit_strategies\helpers.rs:195:pub fn find_best_match_range(
