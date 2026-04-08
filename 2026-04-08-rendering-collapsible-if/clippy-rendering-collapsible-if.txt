@@ -1,0 +1,227 @@
+warning: profiles for the non root package will be ignored, specify profiles at the workspace root:
+package:   C:\Users\mirac\OneDrive\Desktop\cortex\cortex-tui-framework\Cargo.toml
+workspace: C:\Users\mirac\OneDrive\Desktop\cortex\Cargo.toml
+    Checking cortex-protocol v0.0.7 (C:\Users\mirac\OneDrive\Desktop\cortex\src\cortex-protocol)
+    Checking cortex-tui-text v0.1.0 (C:\Users\mirac\OneDrive\Desktop\cortex\cortex-tui-framework\crates\cortex-tui-text)
+    Checking cortex-login v0.0.7 (C:\Users\mirac\OneDrive\Desktop\cortex\src\cortex-login)
+    Checking cortex-windows-sandbox v0.1.0 (C:\Users\mirac\OneDrive\Desktop\cortex\src\cortex-windows-sandbox)
+    Checking cortex-lsp v0.1.0 (C:\Users\mirac\OneDrive\Desktop\cortex\src\cortex-lsp)
+    Checking cortex-snapshot v0.1.0 (C:\Users\mirac\OneDrive\Desktop\cortex\src\cortex-snapshot)
+    Checking cortex-experimental v0.1.0 (C:\Users\mirac\OneDrive\Desktop\cortex\src\cortex-experimental)
+    Checking cortex-mcp-types v0.0.7 (C:\Users\mirac\OneDrive\Desktop\cortex\src\cortex-mcp-types)
+    Checking cortex-resume v0.1.0 (C:\Users\mirac\OneDrive\Desktop\cortex\src\cortex-resume)
+    Checking cortex-review v0.1.0 (C:\Users\mirac\OneDrive\Desktop\cortex\src\cortex-review)
+    Checking cortex-migrations v0.1.0 (C:\Users\mirac\OneDrive\Desktop\cortex\src\cortex-migrations)
+    Checking cortex-ratelimits v0.1.0 (C:\Users\mirac\OneDrive\Desktop\cortex\src\cortex-ratelimits)
+    Checking cortex-tui-syntax v0.1.0 (C:\Users\mirac\OneDrive\Desktop\cortex\cortex-tui-framework\crates\cortex-tui-syntax)
+    Checking cortex-prompt-harness v0.0.7 (C:\Users\mirac\OneDrive\Desktop\cortex\src\cortex-prompt-harness)
+    Checking cortex-tui-core v0.1.0 (C:\Users\mirac\OneDrive\Desktop\cortex\cortex-tui-framework\crates\cortex-tui-core)
+warning: field `config` is never read
+   --> src\cortex-windows-sandbox\src\token.rs:105:5
+    |
+103 | pub struct RestrictedToken {
+    |            --------------- field in this struct
+104 |     handle: HANDLE,
+105 |     config: TokenConfig,
+    |     ^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+System.Management.Automation.RemoteException
+warning: this operation has no effect
+   --> src\cortex-windows-sandbox\src\policy.rs:137:37
+    |
+137 |             max_memory_per_process: 1 * 1024 * 1024 * 1024, // 1 GB
+    |                                     ^^^^^^^^ help: consider reducing it to: `1024`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.93.0/index.html#identity_op
+    = note: `#[warn(clippy::identity_op)]` on by default
+System.Management.Automation.RemoteException
+warning: `cortex-windows-sandbox` (lib) generated 2 warnings (run `cargo clippy --fix --lib -p cortex-windows-sandbox` to apply 1 suggestion)
+    Checking cortex-core v0.0.7 (C:\Users\mirac\OneDrive\Desktop\cortex\src\cortex-core)
+    Checking cortex-tui-buffer v0.1.0 (C:\Users\mirac\OneDrive\Desktop\cortex\cortex-tui-framework\crates\cortex-tui-buffer)
+    Checking cortex-tui-capture v0.0.7 (C:\Users\mirac\OneDrive\Desktop\cortex\src\cortex-tui-capture)
+    Checking cortex-tui-components v0.0.7 (C:\Users\mirac\OneDrive\Desktop\cortex\src\cortex-tui-components)
+    Checking cortex-common v0.0.7 (C:\Users\mirac\OneDrive\Desktop\cortex\src\cortex-common)
+    Checking cortex-agents v0.1.0 (C:\Users\mirac\OneDrive\Desktop\cortex\src\cortex-agents)
+    Checking cortex-ghost v0.1.0 (C:\Users\mirac\OneDrive\Desktop\cortex\src\cortex-ghost)
+    Checking cortex-share v0.1.0 (C:\Users\mirac\OneDrive\Desktop\cortex\src\cortex-share)
+    Checking cortex-batch v0.1.0 (C:\Users\mirac\OneDrive\Desktop\cortex\src\cortex-batch)
+    Checking cortex-hooks v0.1.0 (C:\Users\mirac\OneDrive\Desktop\cortex\src\cortex-hooks)
+    Checking cortex-compact v0.1.0 (C:\Users\mirac\OneDrive\Desktop\cortex\src\cortex-compact)
+    Checking cortex-plugins v0.0.7 (C:\Users\mirac\OneDrive\Desktop\cortex\src\cortex-plugins)
+warning: the `Err`-variant returned from this function is very large
+   --> src\cortex-agents\src\forge\config.rs:398:31
+    |
+ 48 | /     ParseError {
+ 49 | |         path: PathBuf,
+ 50 | |         #[source]
+ 51 | |         source: toml::de::Error,
+ 52 | |     },
+    | |_____- the largest variant contains at least 128 bytes
+...
+398 |       pub fn validate(&self) -> ConfigResult<()> {
+    |                                 ^^^^^^^^^^^^^^^^
+    |
+    = help: try reducing the size of `forge::config::ConfigError`, for example by boxing large elements or replacing it with `Box<forge::config::ConfigError>`
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.93.0/index.html#result_large_err
+    = note: `#[warn(clippy::result_large_err)]` on by default
+System.Management.Automation.RemoteException
+warning: the `Err`-variant returned from this function is very large
+   --> src\cortex-agents\src\forge\config.rs:418:46
+    |
+ 48 | /     ParseError {
+ 49 | |         path: PathBuf,
+ 50 | |         #[source]
+ 51 | |         source: toml::de::Error,
+ 52 | |     },
+    | |_____- the largest variant contains at least 128 bytes
+...
+418 |       fn check_circular_dependencies(&self) -> ConfigResult<()> {
+    |                                                ^^^^^^^^^^^^^^^^
+    |
+    = help: try reducing the size of `forge::config::ConfigError`, for example by boxing large elements or replacing it with `Box<forge::config::ConfigError>`
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.93.0/index.html#result_large_err
+System.Management.Automation.RemoteException
+warning: the `Err`-variant returned from this function is very large
+   --> src\cortex-agents\src\forge\config.rs:426:14
+    |
+ 48 | /     ParseError {
+ 49 | |         path: PathBuf,
+ 50 | |         #[source]
+ 51 | |         source: toml::de::Error,
+ 52 | |     },
+    | |_____- the largest variant contains at least 128 bytes
+...
+426 |           ) -> ConfigResult<()> {
+    |                ^^^^^^^^^^^^^^^^
+    |
+    = help: try reducing the size of `forge::config::ConfigError`, for example by boxing large elements or replacing it with `Box<forge::config::ConfigError>`
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.93.0/index.html#result_large_err
+System.Management.Automation.RemoteException
+warning: the `Err`-variant returned from this function is very large
+   --> src\cortex-agents\src\forge\config.rs:462:40
+    |
+ 48 | /     ParseError {
+ 49 | |         path: PathBuf,
+ 50 | |         #[source]
+ 51 | |         source: toml::de::Error,
+ 52 | |     },
+    | |_____- the largest variant contains at least 128 bytes
+...
+462 |       pub fn from_toml(content: &str) -> ConfigResult<Self> {
+    |                                          ^^^^^^^^^^^^^^^^^^
+    |
+    = help: try reducing the size of `forge::config::ConfigError`, for example by boxing large elements or replacing it with `Box<forge::config::ConfigError>`
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.93.0/index.html#result_large_err
+System.Management.Automation.RemoteException
+warning: the `Err`-variant returned from this function is very large
+   --> src\cortex-agents\src\forge\config.rs:921:40
+    |
+ 48 | /     ParseError {
+ 49 | |         path: PathBuf,
+ 50 | |         #[source]
+ 51 | |         source: toml::de::Error,
+ 52 | |     },
+    | |_____- the largest variant contains at least 128 bytes
+...
+921 |       pub fn from_toml(content: &str) -> ConfigResult<Self> {
+    |                                          ^^^^^^^^^^^^^^^^^^
+    |
+    = help: try reducing the size of `forge::config::ConfigError`, for example by boxing large elements or replacing it with `Box<forge::config::ConfigError>`
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.93.0/index.html#result_large_err
+System.Management.Automation.RemoteException
+warning: `cortex-agents` (lib) generated 5 warnings
+    Checking cortex-engine v0.0.7 (C:\Users\mirac\OneDrive\Desktop\cortex\src\cortex-engine)
+warning: unused variable: `writable_paths`
+  --> src\cortex-engine\src\sandbox\windows.rs:77:13
+   |
+77 |         let writable_paths: Vec<PathBuf> = writable_roots.iter().map(|r| r.root.clone()).collect();
+   |             ^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_writable_paths`
+   |
+   = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+System.Management.Automation.RemoteException
+warning: unused variable: `job`
+   --> src\cortex-engine\src\sandbox\windows.rs:261:25
+    |
+261 |             if let Some(job) = sandbox.job_object() {
+    |                         ^^^ help: if this is intentional, prefix it with an underscore: `_job`
+System.Management.Automation.RemoteException
+warning: unused variable: `permissions`
+   --> src\cortex-engine\src\tasks\snapshot.rs:296:21
+    |
+296 |                     permissions,
+    |                     ^^^^^^^^^^^ help: try ignoring the field: `permissions: _`
+System.Management.Automation.RemoteException
+warning: function `get_user_home_dir` is never used
+   --> src\cortex-engine\src\config\loader.rs:164:4
+    |
+164 | fn get_user_home_dir(_username: &str) -> Option<PathBuf> {
+    |    ^^^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+System.Management.Automation.RemoteException
+warning: function `get_user_home_dir_by_uid` is never used
+   --> src\cortex-engine\src\config\loader.rs:169:4
+    |
+169 | fn get_user_home_dir_by_uid(_uid: u32) -> Option<PathBuf> {
+    |    ^^^^^^^^^^^^^^^^^^^^^^^^
+System.Management.Automation.RemoteException
+warning: constant `BASH_SPECIFIC_PATTERNS` is never used
+  --> src\cortex-engine\src\tools\handlers\local_shell.rs:34:7
+   |
+34 | const BASH_SPECIFIC_PATTERNS: &[&str] = &[
+   |       ^^^^^^^^^^^^^^^^^^^^^^
+System.Management.Automation.RemoteException
+warning: field `sandbox` is never read
+  --> src\cortex-engine\src\sandbox\windows.rs:24:5
+   |
+21 | pub struct WindowsBackend {
+   |            -------------- field in this struct
+...
+24 |     sandbox: Option<WindowsSandbox>,
+   |     ^^^^^^^
+System.Management.Automation.RemoteException
+warning: `cortex-engine` (lib) generated 7 warnings (run `cargo clippy --fix --lib -p cortex-engine` to apply 3 suggestions)
+    Checking cortex-update v0.0.7 (C:\Users\mirac\OneDrive\Desktop\cortex\src\cortex-update)
+    Checking cortex-tui v0.0.7 (C:\Users\mirac\OneDrive\Desktop\cortex\src\cortex-tui)
+warning: unreachable expression
+   --> src\cortex-tui\src\external_editor.rs:135:5
+    |
+ 99 |         return Ok("notepad".to_string());
+    |         -------------------------------- any code following this expression is unreachable
+...
+135 |     Ok("vi".to_string())
+    |     ^^^^^^^^^^^^^^^^^^^^ unreachable expression
+    |
+    = note: `#[warn(unreachable_code)]` (part of `#[warn(unused)]`) on by default
+System.Management.Automation.RemoteException
+warning: unused variable: `terminal`
+   --> src\cortex-tui\src\runner\event_loop\input.rs:580:33
+    |
+580 |     fn handle_resume(&mut self, terminal: &mut CortexTerminal) -> Result<()> {
+    |                                 ^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_terminal`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+System.Management.Automation.RemoteException
+warning: this `if` statement can be collapsed
+   --> src\cortex-tui\src\runner\event_loop\rendering.rs:386:21
+    |
+386 | /                     if let Ok(mut clipboard) = arboard::Clipboard::new() {
+387 | |                         if let Err(e) = clipboard.set_text(&selected_text) {
+388 | |                             tracing::warn!("Failed to copy to clipboard: {}", e);
+389 | |                         }
+390 | |                     }
+    | |_____________________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.93.0/index.html#collapsible_if
+    = note: requested on the command line with `-W clippy::collapsible-if`
+help: collapse nested if block
+    |
+386 ~                     if let Ok(mut clipboard) = arboard::Clipboard::new()
+387 ~                         && let Err(e) = clipboard.set_text(&selected_text) {
+388 |                             tracing::warn!("Failed to copy to clipboard: {}", e);
+389 ~                         }
+    |
+System.Management.Automation.RemoteException
+warning: `cortex-tui` (lib) generated 3 warnings (run `cargo clippy --fix --lib -p cortex-tui` to apply 2 suggestions)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1m 45s

@@ -1,0 +1,9 @@
+PS C:\Users\mirac\OneDrive\Desktop\cortex> cargo clippy -p cortex-tui --lib -- -W clippy::collapsible_if 
+warning: this `if` statement can be collapsed
+   --> src\cortex-tui\src\runner\event_loop\rendering.rs:386:21
+386 | /                     if let Ok(mut clipboard) = arboard::Clipboard::new() {
+387 | |                         if let Err(e) = clipboard.set_text(&selected_text) {
+388 | |                             tracing::warn!("Failed to copy to clipboard: {}", e);
+386 ~                     if let Ok(mut clipboard) = arboard::Clipboard::new()
+387 ~                         && let Err(e) = clipboard.set_text(&selected_text) {
+388 |                             tracing::warn!("Failed to copy to clipboard: {}", e);
